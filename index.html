@@ -333,7 +333,35 @@
         }
         .form-submit:hover { background: var(--primary-dark); }
 
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 28px;
+        }
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .gallery-item:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-label {
+            padding: 16px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
+            .gallery { grid-template-columns: 1fr; }
             .price-strip { gap: 24px; }
             .hero { padding: 50px 0 40px; }
         }
@@ -410,6 +438,35 @@
                     <div class="service-icon">📱</div>
                     <h3>Multi-Platform Formats</h3>
                     <p>Get your visuals in every size you need — Instagram square, TikTok portrait, website landscape, Amazon listing specs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="results">
+        <div class="container">
+            <h2 class="section-title">Real Results — Before & After</h2>
+            <p class="section-sub">See the difference AI-powered photography makes for real products</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="candle-before-after.png" alt="Candle product photography before and after" loading="lazy">
+                    <p class="gallery-label">🕯️ Handmade Candle — From phone snap to luxury lifestyle</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="sneaker-before-after.png" alt="Sneaker product photography before and after" loading="lazy">
+                    <p class="gallery-label">👟 Sneaker — From bedroom floor to hero shot</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="coffee-bag-before-after.png" alt="Coffee bag product photography before and after" loading="lazy">
+                    <p class="gallery-label">☕ Craft Coffee — From kitchen counter to premium brand</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="skincare-serum-before-after.png" alt="Skincare serum product photography before and after" loading="lazy">
+                    <p class="gallery-label">✨ Skincare Serum — From bathroom shelf to beauty editorial</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="before-after-sample.png" alt="Skincare cream product photography before and after" loading="lazy">
+                    <p class="gallery-label">🧴 Skincare Cream — From messy desk to spa luxury</p>
                 </div>
             </div>
         </div>
