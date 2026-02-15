@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium AI Product Photography | Studio-Quality Photos in 24 Hours</title>
+    <meta name="description" content="Transform your product photos into premium, studio-quality visuals that sell. 5 photos for $49. 24-hour turnaround. No photoshoot needed.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #7371fc;
+            --primary-dark: #5a58d4;
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a26;
+            --text: #e8e8ed;
+            --text-muted: #9494a8;
+            --accent: #00d4aa;
+            --border: #2a2a3a;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* Nav */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(10,10,15,0.9);
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; }
+        .logo span { color: var(--primary); }
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--primary-dark); }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(115,113,252,0.15);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(115,113,252,0.3);
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #c4c3ff 50%, #7371fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 24px rgba(115,113,252,0.3);
+        }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(115,113,252,0.4); }
+        .hero-sub { color: var(--text-muted); font-size: 0.9rem; margin-top: 12px; }
+
+        /* Pricing highlight */
+        .price-strip {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        .price-item {
+            text-align: center;
+        }
+        .price-item .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .price-item .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Services */
+        .section { padding: 60px 0; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+        .service-card:hover { border-color: var(--primary); background: var(--bg-card-hover); }
+        .service-icon { font-size: 2rem; margin-bottom: 16px; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 8px; font-weight: 700; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Packages */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .package {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .package.featured {
+            border-color: var(--primary);
+            box-shadow: 0 0 40px rgba(115,113,252,0.15);
+        }
+        .package.featured::before {
+            content: '⭐ MOST POPULAR';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 4px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .package h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .package .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 16px 0;
+        }
+        .package .price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+        .package ul { list-style: none; margin: 20px 0; }
+        .package ul li {
+            padding: 8px 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .package ul li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+        .package-cta {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .package-cta.primary { background: var(--primary); color: white; }
+        .package-cta.primary:hover { background: var(--primary-dark); }
+        .package-cta.outline { border: 2px solid var(--border); color: var(--text); }
+        .package-cta.outline:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* How it works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .step { text-align: center; }
+        .step-num {
+            width: 48px; height: 48px;
+            background: rgba(115,113,252,0.15);
+            color: var(--primary);
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+        .step h3 { margin-bottom: 8px; font-weight: 700; }
+        .step p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Guarantee */
+        .guarantee {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+        .guarantee-badge {
+            display: inline-block;
+            width: 80px; height: 80px;
+            background: rgba(0,212,170,0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border: 2px solid rgba(0,212,170,0.3);
+        }
+
+        /* CTA */
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(115,113,252,0.05) 100%);
+        }
+        .final-cta h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .final-cta p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Contact form */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus { border-color: var(--primary); }
+        .contact-form label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-muted);
+        }
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .form-submit:hover { background: var(--primary-dark); }
+
+        @media (max-width: 768px) {
+            .price-strip { gap: 24px; }
+            .hero { padding: 50px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Creativio<span>Studio</span></div>
+            <a href="#contact" class="nav-cta">Get Started →</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🚀 AI-Powered Product Photography</div>
+            <h1>Premium Product Photos<br>That Actually Sell</h1>
+            <p>Send us your basic product photos. Get back studio-quality, lifestyle-ready visuals in 24 hours. No photoshoot needed.</p>
+            <a href="#contact" class="hero-cta">Get Your Photos Now</a>
+            <p class="hero-sub">Starting at $49 · 24-hour delivery · 100% satisfaction guarantee</p>
+
+            <div class="price-strip">
+                <div class="price-item">
+                    <div class="number">$49</div>
+                    <div class="label">Starting price</div>
+                </div>
+                <div class="price-item">
+                    <div class="number">24h</div>
+                    <div class="label">Turnaround time</div>
+                </div>
+                <div class="price-item">
+                    <div class="number">4K</div>
+                    <div class="label">Ultra-HD quality</div>
+                </div>
+                <div class="price-item">
+                    <div class="number">100%</div>
+                    <div class="label">Satisfaction guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What We Create For You</h2>
+            <p class="section-sub">From plain product photos to premium marketing visuals — powered by AI</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📸</div>
+                    <h3>Lifestyle Product Scenes</h3>
+                    <p>Place your product in stunning lifestyle environments — kitchen counters, outdoor settings, luxury interiors — without a physical photoshoot.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Background Enhancement</h3>
+                    <p>Remove messy backgrounds and replace them with clean, professional settings that make your product the focal point.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>4K Image Upscaling</h3>
+                    <p>Turn low-res phone photos into crisp, zoom-ready 4K images perfect for product pages and large displays.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3>Product Animation Videos</h3>
+                    <p>Transform still photos into scroll-stopping animated videos for Reels, TikTok, and YouTube Shorts.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏷️</div>
+                    <h3>Brand-Consistent Visuals</h3>
+                    <p>Every image matches your brand colors, style, and aesthetic for a cohesive, professional look across all platforms.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Multi-Platform Formats</h3>
+                    <p>Get your visuals in every size you need — Instagram square, TikTok portrait, website landscape, Amazon listing specs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: rgba(115,113,252,0.03);">
+        <div class="container">
+            <h2 class="section-title">Simple Pricing, Big Results</h2>
+            <p class="section-sub">Choose the package that fits your needs</p>
+            <div class="packages">
+                <div class="package">
+                    <h3>Starter</h3>
+                    <p style="color: var(--text-muted);">Perfect for testing</p>
+                    <div class="price">$49 <span>one-time</span></div>
+                    <ul>
+                        <li>5 premium product photos</li>
+                        <li>Background removal + enhancement</li>
+                        <li>1 lifestyle scene per product</li>
+                        <li>2K HD resolution</li>
+                        <li>24-hour delivery</li>
+                        <li>1 revision round</li>
+                    </ul>
+                    <a href="#contact" class="package-cta outline">Get Started</a>
+                </div>
+                <div class="package featured">
+                    <h3>Growth</h3>
+                    <p style="color: var(--text-muted);">Best value for stores</p>
+                    <div class="price">$97 <span>one-time</span></div>
+                    <ul>
+                        <li>15 premium product photos</li>
+                        <li>Background removal + enhancement</li>
+                        <li>3 lifestyle scenes per product</li>
+                        <li>4K Ultra-HD resolution</li>
+                        <li>Multi-platform sizing included</li>
+                        <li>24-hour delivery</li>
+                        <li>2 revision rounds</li>
+                        <li>Commercial use license</li>
+                    </ul>
+                    <a href="#contact" class="package-cta primary">Get Started</a>
+                </div>
+                <div class="package">
+                    <h3>Agency</h3>
+                    <p style="color: var(--text-muted);">Full visual overhaul</p>
+                    <div class="price">$197 <span>one-time</span></div>
+                    <ul>
+                        <li>30 premium product photos</li>
+                        <li>Everything in Growth, plus:</li>
+                        <li>5 animated product videos</li>
+                        <li>Brand style guide matching</li>
+                        <li>Full catalog formatting</li>
+                        <li>Priority 12-hour delivery</li>
+                        <li>Unlimited revisions</li>
+                    </ul>
+                    <a href="#contact" class="package-cta outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-sub">From upload to download in 3 simple steps</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Send Your Photos</h3>
+                    <p>Upload your product photos — even phone snapshots work. Tell us your brand style and what platforms you need them for.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>We Create The Magic</h3>
+                    <p>Our AI studio generates multiple premium variations — lifestyle scenes, clean backgrounds, platform-optimized sizes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Download & Sell More</h3>
+                    <p>Get your finished visuals in 24 hours. Ready to upload directly to your store, ads, and social media.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-badge">🛡️</div>
+            <h2 style="margin-bottom: 12px;">100% Satisfaction Guarantee</h2>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">If you're not happy with the results, we'll redo them for free or give you a full refund. No questions asked.</p>
+        </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>Ready to Upgrade Your Product Photos?</h2>
+            <p>Send us your details and we'll get started within the hour.</p>
+            <div class="contact-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@yourstore.com" required>
+                
+                <label for="store">Your Store URL (optional)</label>
+                <input type="url" id="store" name="store" placeholder="https://yourstore.com">
+                
+                <label for="package">Package</label>
+                <select id="package" name="package">
+                    <option value="starter">Starter — 5 Photos ($49)</option>
+                    <option value="growth" selected>Growth — 15 Photos ($97)</option>
+                    <option value="agency">Agency — 30 Photos + Videos ($197)</option>
+                </select>
+                
+                <label for="message">Tell us about your products</label>
+                <textarea id="message" name="message" rows="4" placeholder="What products do you sell? What style are you going for?"></textarea>
+                
+                <button type="submit" class="form-submit" onclick="submitForm(event)">Get My Premium Photos →</button>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 12px;">We'll reply within 1 hour with next steps.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 CreativioStudio · AI-Powered Product Photography · <a href="mailto:adrian@creativio.ai" style="color: var(--primary);">adrian@creativio.ai</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const store = document.getElementById('store').value;
+            const pkg = document.getElementById('package').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email) {
+                alert('Please fill in your name and email.');
+                return;
+            }
+            
+            // Send via mailto as fallback
+            const subject = encodeURIComponent(`Product Photography Request — ${pkg}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nStore: ${store}\nPackage: ${pkg}\nDetails: ${message}`);
+            window.location.href = `mailto:adrian@creativio.ai?subject=${subject}&body=${body}`;
+            
+            // Show confirmation
+            document.querySelector('.contact-form').innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 3rem; margin-bottom: 16px;">✅</div>
+                    <h3 style="margin-bottom: 8px;">Request Sent!</h3>
+                    <p style="color: var(--text-muted);">We'll get back to you within 1 hour with next steps. Check your email!</p>
+                </div>
+            `;
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
